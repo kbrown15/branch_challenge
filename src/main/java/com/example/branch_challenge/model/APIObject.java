@@ -7,16 +7,14 @@ import java.net.URL;
 import java.util.Date;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ExampleObject {
+public class APIObject {
     public String user_name;
     public String display_name;
     public URL avatar;
     public String geo_location;
-    //TODO: make email validator
     public String email;
     public  URL url;
     public Date created_at;
-    public ExampleRepo[] repos;
 
     @JsonProperty("login")
     public String getUser_name() {
@@ -78,11 +76,4 @@ public class ExampleObject {
         this.created_at = created_at;
     }
 
-    public ExampleRepo[] getRepos() {
-        return repos;
-    }
-
-    public void setRepos(ExampleRepo[] repos) {
-        this.repos = repos;
-    }
 }

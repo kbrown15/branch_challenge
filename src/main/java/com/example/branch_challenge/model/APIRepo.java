@@ -5,25 +5,23 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.net.URL;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ExampleRepo {
+public class APIRepo {
+    public String name;
+    public URL url;
+
     public String getName() {
         return name;
     }
 
-    public ExampleRepo setName(String name) {
+    public void setName(String name) {
         this.name = name;
-        return this;
     }
 
     public URL getUrl() {
         return url;
     }
 
-    public ExampleRepo setUrl(URL url) {
+    public void setUrl(URL url) {
         this.url = url;
-        return this;
     }
-
-    public String name;
-    public URL url;
 }

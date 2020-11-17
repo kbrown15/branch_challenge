@@ -1,7 +1,7 @@
 package com.example.branch_challenge.delegate;
 
-import com.example.branch_challenge.model.ExampleObject;
-import com.example.branch_challenge.model.ExampleRepo;
+import com.example.branch_challenge.model.APIObject;
+import com.example.branch_challenge.model.APIRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -16,11 +16,11 @@ public class ExampleDelegate {
         this.restTemplate = restTemplate;
     }
 
-    public ExampleObject getMainObject(String userName) {
-        return restTemplate.getForObject(urlStart, ExampleObject.class, userName);
+    public APIObject getMainObject(String userName) {
+        return restTemplate.getForObject(urlStart, APIObject.class, userName);
     }
 
-    public ExampleRepo[] getRepoObject(String userName) {
-        return restTemplate.getForObject(urlStart + "/repos", ExampleRepo[].class, userName);     //kb: fix this
+    public APIRepo[] getRepoObject(String userName) {
+        return restTemplate.getForObject(urlStart + "/repos", APIRepo[].class, userName);     //kb: fix this
     }
 }

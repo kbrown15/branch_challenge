@@ -8,13 +8,13 @@ import java.util.Date;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class APIObject {
-    public String user_name;
-    public String display_name;
-    public URL avatar;
-    public String geo_location;
-    public String email;
-    public  URL url;
-    public Date created_at;
+    private String user_name;
+    private String display_name;
+    private URL avatar;
+    private String geo_location;
+    private String email;
+    private  URL url;
+    private Date created_at;
 
     @JsonProperty("login")
     public String getUser_name() {

@@ -24,13 +24,17 @@ public class ExampleService {
         }
         ResponseObject response = new ResponseObject();
         LOGGER.info("First delegate call with username=" + username);
-        APIObject apiObject = delegate.getMainObject(username);
+        APIObject apiObject;
+        try {
+            apiObject = delegate.getMainObject(username);
+        } catch (Exception e) {
+            LOGGER.warning("Call failed");
+            throw e;
+        }
         if (apiObject != null) {
             response = response.fromAPIObject(apiObject);
             LOGGER.info("Second delegate call with username=" + username);
             response.setRepos(delegate.getRepoObject(username));
-        } else {
-            LOGGER.warning("Call returned null");
         }
 
         return response;

@@ -1,17 +1,20 @@
 package com.example.branch_challenge.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.net.URL;
 import java.util.Date;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ResponseObject {
-    public String user_name;
-    public String display_name;
-    public URL avatar;
-    public String geo_location;
-    public String email;
-    public  URL url;
-    public Date created_at;
-    public APIRepo[] repos;
+    private String user_name;
+    private String display_name;
+    private URL avatar;
+    private String geo_location;
+    private String email;
+    private  URL url;
+    private Date created_at;
+    private APIRepo[] repos;
 
     public ResponseObject() {
 
@@ -82,13 +85,13 @@ public class ResponseObject {
     }
 
     public ResponseObject fromAPIObject(APIObject o) {
-        this.user_name = o.user_name;
-        this.display_name = o.display_name;
-        this.avatar = o.avatar;
-        this.geo_location = o.geo_location;
-        this.email = o.email;
-        this.url = o.url;
-        this.created_at = o.created_at;
+        this.user_name = o.getUser_name();
+        this.display_name = o.getDisplay_name();
+        this.avatar = o.getAvatar();
+        this.geo_location = o.getGeo_location();
+        this.email = o.getEmail();
+        this.url = o.getUrl();
+        this.created_at = o.getCreated_at();
 
         return  this;
     }

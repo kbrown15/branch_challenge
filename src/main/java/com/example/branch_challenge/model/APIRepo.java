@@ -6,8 +6,8 @@ import java.net.URL;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class APIRepo {
-    public String name;
-    public URL url;
+    private String name;
+    private URL url;
 
     public String getName() {
         return name;

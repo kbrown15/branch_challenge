@@ -48,5 +48,5 @@ got a response that we didn't want or expect, but logging is the first step to f
 so I'm glad I at least did that.
 
 Tests were written in groovy because I like how readable it is, and I have more recent familiarity with it over pure jUnit
-testing. The application code was written with test-driven design in mind, and error cases were intentionally not made to throw
-exceptions, and allow null object returns just because that's what I decided I wanted the code to do as I wrote the tests.
+testing. The application code was written with test-driven design in mind, and null object returns are allowed just because
+that's what I decided I wanted the code to do as I wrote the tests.

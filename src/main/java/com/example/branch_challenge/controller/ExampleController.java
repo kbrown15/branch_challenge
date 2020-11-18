@@ -7,9 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.logging.Logger;
+
 @RestController
 public class ExampleController {
     private ExampleService exampleService;
+    private static final Logger LOGGER = Logger.getLogger(ExampleController.class.getName());
 
     @Autowired
     public ExampleController(ExampleService exampleService) {
@@ -17,7 +20,8 @@ public class ExampleController {
     }
 
     @GetMapping(value = "/users/{userName}")
-    public ResponseObject getResponse(@PathVariable String userName) {
+    public ResponseObject getExampleResponse(@PathVariable String userName) {
+        LOGGER.info("Calling service method");
         return exampleService.getResponse(userName);
     }
 
